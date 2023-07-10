@@ -15,15 +15,9 @@ function solveEquation(a, b, c) {
   return arr;
 }
 
+
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   
-}
-
-"use strict";
-function calculateTotalMortgage(percent, contribution, amount, countMonths) {
-  if (isNaN(percent) || isNaN(contribution) || isNaN(amount) || isNaN(countMonths)) {
-    return false;
-  }
 
   let creditBody = amount - contribution;
   let monthlyPercent = percent / 100 / 12;
