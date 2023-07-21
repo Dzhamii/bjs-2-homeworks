@@ -19,6 +19,7 @@ console.log(getArrayParams([-99, 99, 10]))
 
 
 
+
 function summElementsWorker(...arr) {
   if (arr.length === 0) {
     return 0;
@@ -62,7 +63,6 @@ function differenceEvenOddWorker(...arr) {
   return sumEvenElement - sumOddElement;
 }
 
-function averageEvenElementsWorker(...arr) {
   function averageEvenElementsWorker(...arr) {
     if (arr.length === 0) {
       return 0;
@@ -88,11 +88,8 @@ function averageEvenElementsWorker(...arr) {
   console.log(differenceMaxMinWorker(...numbers)); 
   console.log(differenceEvenOddWorker(...numbers)); 
   console.log(averageEvenElementsWorker(...numbers)); 
-}
 
-function makeWork (arrOfArr, func) {
 
-}
 
 
 function makeWork(arrOfArr, func) {
