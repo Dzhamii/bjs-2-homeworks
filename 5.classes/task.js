@@ -34,30 +34,31 @@ class PrintEditionItem {
   }
   
   class Book extends PrintEditionItem {
-    constructor(name, releaseDate, pagesCount, author) {
+    constructor(author, name, releaseDate, pagesCount) {
       super(name, releaseDate, pagesCount);
-      this.type = "book";
       this.author = author;
+      this.type = "book";
+      
     }
   }
   
   class NovelBook extends Book {
-    constructor(name, releaseDate, pagesCount, author) {
-      super(name, releaseDate, pagesCount, author);
+    constructor(author, name, releaseDate, pagesCount) {
+      super(author, name, releaseDate, pagesCount);
       this.type = "novel";
     }
   }
   
   class FantasticBook extends Book {
-    constructor(name, releaseDate, pagesCount, author) {
-      super(name, releaseDate, pagesCount, author);
+    constructor(author, name, releaseDate, pagesCount) {
+      super(author, name, releaseDate, pagesCount);
       this.type = "fantastic";
     }
   }
   
   class DetectiveBook extends Book {
-    constructor(name, releaseDate, pagesCount, author) {
-      super(name, releaseDate, pagesCount, author);
+    constructor(author, name, releaseDate, pagesCount) {
+      super(author, name, releaseDate, pagesCount);
       this.type = "detective";
     }
   }
@@ -106,13 +107,11 @@ class PrintEditionItem {
     }
   
     giveBookByName(bookName) {
-      const foundIndex = this.books.findIndex(book => book.name === bookName);
-      if (foundIndex !== -1) {
-        return this.books.splice(foundIndex, 1)[0];
-      } else {
-        return null;
+        const book = this.findBookBy("name", bookName);
+        if (!book) return null;
+        this.books = this.books.filter((item) => item.name !== bookName);
+        return book;
       }
-    }
   }
   
   const library = new Library("Библиотека имени Ленина");
